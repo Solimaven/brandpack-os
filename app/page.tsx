@@ -171,39 +171,39 @@ export default function AgencyPortfolio() {
   return (
     <div className={`min-h-screen font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300 overflow-x-hidden relative ${bgMain}`}>
       
-      {/* BALANCED ANIMATED BACKGROUND PATTERN (Non-interactive layer) */}
+      {/* SUBTLE BALANCED BACKGROUND (Non-interactive layer) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {/* Subtle Moving Grid Lines */}
-        <div className={`absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#2563eb_1px,transparent_1px),linear-gradient(to_bottom,#2563eb_1px,transparent_1px)] bg-[size:4rem_4rem]`}></div>
+        {/* Very faint, soft grid lines */}
+        <div className={`absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#2563eb_1px,transparent_1px),linear-gradient(to_bottom,#2563eb_1px,transparent_1px)] bg-[size:4rem_4rem]`}></div>
 
-        {/* Floating Animated Orb 1 */}
+        {/* Soft Floating Orb 1 */}
         <motion.div 
           animate={{
-            x: [0, 60, -40, 0],
-            y: [0, -80, 50, 0],
-            scale: [1, 1.2, 0.9, 1],
+            x: [0, 40, -30, 0],
+            y: [0, -50, 30, 0],
+            scale: [1, 1.1, 0.95, 1],
           }}
           transition={{
-            duration: 18,
+            duration: 20,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[140px]"
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[160px]"
         />
 
-        {/* Floating Animated Orb 2 */}
+        {/* Soft Floating Orb 2 */}
         <motion.div 
           animate={{
-            x: [0, -70, 50, 0],
-            y: [0, 90, -60, 0],
-            scale: [1, 0.85, 1.1, 1],
+            x: [0, -50, 40, 0],
+            y: [0, 60, -40, 0],
+            scale: [1, 0.9, 1.05, 1],
           }}
           transition={{
-            duration: 22,
+            duration: 25,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-orange-600/10 rounded-full blur-[150px]"
+          className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-orange-600/8 rounded-full blur-[170px]"
         />
       </div>
 

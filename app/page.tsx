@@ -346,7 +346,7 @@ export default function Home() {
               <Package className="w-5 h-5" />
             </div>
             <div>
-              <span className={`font-bold text-base tracking-tight block leading-tight ${textHeading}`}>BrandPack OS</span>
+              <span className={`font-bold text-base tracking-tight block leading-tight ${textHeading}`}>AlliesOS</span>
               <span className="text-[10px] text-indigo-500 font-medium tracking-wide">Allies Investors Tanzania</span>
             </div>
           </motion.div>
@@ -465,7 +465,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className={`text-base sm:text-xl max-w-2xl mx-auto leading-relaxed ${textSub}`}
             >
-              Stop manually organizing folders and resizing vectors. BrandPack OS automates your entire client handoff with structured hierarchies, color code detection, and multi-tier resolutions.
+              Stop manually organizing folders and resizing vectors. AlliesOS automates your entire client handoff with structured hierarchies, color code detection, and multi-tier resolutions.
             </motion.p>
 
             <motion.div 
@@ -637,7 +637,7 @@ export default function Home() {
                     <li className="flex items-center gap-2"><Check className="w-4 h-4 text-indigo-500" /> Priority Support & Updates</li>
                   </ul>
                 </div>
-                <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => setView("auth")} className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-semibold text-xs shadow-lg shadow-indigo-600/30 transition-all">
+                <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} onClick={() => setView("auth")} className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl text-xs shadow-lg shadow-indigo-600/30 transition-all">
                   Get Started Now
                 </motion.button>
               </motion.div>
@@ -698,14 +698,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={`text-xs font-mono px-3 py-1.5 rounded-xl border ${isDark ? "bg-slate-900 text-slate-200 border-slate-800" : "bg-white text-slate-700 border-slate-200"}`}>
-                  @allies_investors_tanzanzia
+                  @allies_investors_tanzania
                 </div>
               </div>
 
               <div className="flex flex-col items-center md:items-end justify-center space-y-2">
                 <span className={`text-xs font-semibold ${textSub}`}>System Version</span>
                 <span className="text-xs text-indigo-500 font-mono bg-indigo-500/10 px-3 py-1.5 rounded-lg border border-indigo-500/20">
-                  BrandPack OS v1.2 Pro
+                  AlliesOS v1.2 Pro
                 </span>
               </div>
             </div>

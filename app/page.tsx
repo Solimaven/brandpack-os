@@ -131,9 +131,9 @@ export default function Home() {
   };
 
   const handleLoadDemoSvg = () => {
-    const demoSvgString = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#6366F1"/><path d="M30 70L50 30L70 70H30Z" fill="#EC4899"/></svg>`;
+    const demoSvgString = `<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2560" viewBox="0 0 2048 2560" fill="none"><rect width="2048" height="2560" rx="400" fill="#6366F1"/><path d="M600 1400L1024 600L1448 1400H600Z" fill="#EC4899"/></svg>`;
     const blob = new Blob([demoSvgString], { type: "image/svg+xml" });
-    const file = new File([blob], "demo_logo_allies.svg", { type: "image/svg+xml" });
+    const file = new File([blob], "Primary_Logo.svg", { type: "image/svg+xml" });
     const dataUrl = `data:image/svg+xml;base64,${btoa(demoSvgString)}`;
 
     setSlots((prev) =>
@@ -226,6 +226,10 @@ export default function Home() {
     return new Promise((resolve) => {
       const img = new Image();
       img.onload = () => {
+        // Robust dimension fallback if SVG lacks explicit width/height
+        const w = img.width || 2048;
+        const h = img.height || 2560;
+
         const canvas = document.createElement("canvas");
         canvas.width = targetSize;
         canvas.height = targetSize;
@@ -239,13 +243,13 @@ export default function Home() {
             ctx.clearRect(0, 0, targetSize, targetSize);
           }
 
-          const hRatio = targetSize / img.width;
-          const vRatio = targetSize / img.height;
+          const hRatio = targetSize / w;
+          const vRatio = targetSize / h;
           const ratio = Math.min(hRatio, vRatio);
-          const centerShiftX = (targetSize - img.width * ratio) / 2;
-          const centerShiftY = (targetSize - img.height * ratio) / 2;
+          const centerShiftX = (targetSize - w * ratio) / 2;
+          const centerShiftY = (targetSize - h * ratio) / 2;
 
-          ctx.drawImage(img, 0, 0, img.width, img.height, centerShiftX, centerShiftY, img.width * ratio, img.height * ratio);
+          ctx.drawImage(img, 0, 0, w, h, centerShiftX, centerShiftY, w * ratio, h * ratio);
           canvas.toBlob((blob) => resolve(blob), mimeType, 0.92);
         } else {
           resolve(null);
@@ -261,7 +265,7 @@ export default function Home() {
     setDownloadComplete(false);
 
     const zip = new JSZip();
-    const cleanBrandName = brandName.replace(/[^a-zA-Z0-9_-]/g, "_");
+    const cleanBrandName = (brandName || "Allies_Brand").replace(/[^a-zA-Z0-9_-]/g, "_");
     const rootFolder = zip.folder(`Complete_Master_Logo_Pack`);
 
     const resolutions = [
@@ -273,7 +277,7 @@ export default function Home() {
 
     for (const slot of slots) {
       if (slot.svgFile && slot.svgDataUrl) {
-        const baseName = slot.svgFile.name.replace(/\.svg$/i, "");
+        const baseName = slot.svgFile.name.replace(/\.svg$/i, "").replace(/[^a-zA-Z0-9_-]/g, "_");
         const categoryFolder = rootFolder?.folder(slot.folderPrefix);
 
         const rgbFolder = categoryFolder?.folder("01_RGB_Digital");
@@ -314,12 +318,12 @@ export default function Home() {
 
     const colorFolder = rootFolder?.folder("07_Brand_Color_Palette");
     const paletteData = {
-      brandName: brandName,
+      brandName: brandName || "Allies Brand",
       extractedAndCustomColors: detectedColors,
       agency: "Allies Investors Tanzania",
     };
     colorFolder?.file("Brand_Color_Codes.json", JSON.stringify(paletteData, null, 2));
-    colorFolder?.file("Color_Palette_Guide.txt", `Official Brand Colors for ${brandName} by Allies Investors Tanzania:\n\n` + detectedColors.join("\n"));
+    colorFolder?.file("Color_Palette_Guide.txt", `Official Brand Colors for ${brandName || "Allies Brand"} by Allies Investors Tanzania:\n\n` + detectedColors.join("\n"));
 
     const content = await zip.generateAsync({ type: "blob" });
     const link = document.createElement("a");

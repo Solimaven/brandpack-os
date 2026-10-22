@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import JSZip from "jszip";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   Download, 
   CheckCircle, 
@@ -25,11 +25,15 @@ import {
   Info,
   Send,
   ChevronRight,
+  ChevronDown,
   Sun,
   Moon,
   Lock,
   User,
-  ArrowLeft
+  ArrowLeft,
+  Layers,
+  Zap,
+  Sliders
 } from "lucide-react";
 
 interface SlotAsset {
@@ -51,6 +55,9 @@ export default function Home() {
   const [accountEmail, setAccountEmail] = useState("solimaven@gmail.com");
   const [accountPassword, setAccountPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // FAQ State
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const [portalStep, setPortalStep] = useState<1 | 2 | 3>(1);
   const [brandName, setBrandName] = useState("Allies Brand");
@@ -88,6 +95,25 @@ export default function Home() {
       svgDataUrl: null,
     },
   ]);
+
+  const faqs = [
+    {
+      question: "What logo file formats does AlliesOS generate?",
+      answer: "AlliesOS processes clean .SVG vector inputs and automatically generates vector EPS, print PDF, Pantone-ready files, SVG, transparent PNGs (512px, 1024px, 2048px, 4096px), solid JPGs, WebP images, and structured JSON color palettes."
+    },
+    {
+      question: "Are the generated raster images aspect-ratio safe?",
+      answer: "Yes! The rendering canvas calculates precise aspect ratios with automatic centering and transparent padding, guaranteeing zero stretching or distortion regardless of resolution tier."
+    },
+    {
+      question: "Is my artwork stored on public cloud servers?",
+      answer: "AlliesOS processes vectors client-side directly within your browser session for maximum speed and absolute intellectual property confidentiality."
+    },
+    {
+      question: "Can I customize the folder names inside the ZIP package?",
+      answer: "AlliesOS follows standardized studio directory conventions out of the box, organized by RGB, CMYK, Vector, and Pantone categories to ensure seamless client handoffs."
+    }
+  ];
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
@@ -435,6 +461,7 @@ export default function Home() {
       {/* VIEW 1: LANDING PAGE */}
       {view === "landing" && (
         <div className="flex-1 flex flex-col">
+          {/* Hero Section */}
           <section className="max-w-7xl mx-auto px-6 pt-20 pb-16 text-center space-y-8">
             <motion.div 
               initial={{ opacity: 0, y: -20 }}
@@ -595,6 +622,50 @@ export default function Home() {
             </div>
           </section>
 
+          {/* HOW IT WORKS SECTION */}
+          <section id="how-it-works" className={`max-w-7xl mx-auto px-6 py-24 border-t ${borderSec} space-y-16`}>
+            <div className="text-center space-y-4 max-w-3xl mx-auto">
+              <span className="text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">3-Step Automation</span>
+              <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>How AlliesOS Works</h2>
+              <p className={`text-sm sm:text-base ${textSub}`}>From raw SVG artwork to a complete studio-grade client handoff pack in three simple steps.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+              {/* Step 1 */}
+              <motion.div whileHover={{ y: -6 }} className={`border rounded-3xl p-8 space-y-4 relative ${bgCard}`}>
+                <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white font-bold flex items-center justify-center text-sm shadow-md">
+                  01
+                </div>
+                <h3 className={`text-lg font-bold ${textHeading}`}>Upload Clean SVG Vectors</h3>
+                <p className={`text-xs leading-relaxed ${textSub}`}>
+                  Drop your Primary Logo, Secondary Lockup, and Submark vector files into dedicated slot targets.
+                </p>
+              </motion.div>
+
+              {/* Step 2 */}
+              <motion.div whileHover={{ y: -6 }} className={`border rounded-3xl p-8 space-y-4 relative ${bgCard}`}>
+                <div className="w-10 h-10 rounded-xl bg-violet-600 text-white font-bold flex items-center justify-center text-sm shadow-md">
+                  02
+                </div>
+                <h3 className={`text-lg font-bold ${textHeading}`}>Extract & Edit Color Codes</h3>
+                <p className={`text-xs leading-relaxed ${textSub}`}>
+                  AlliesOS automatically scans vector fills to pull dominant HEX swatches and build brand palette JSON guides.
+                </p>
+              </motion.div>
+
+              {/* Step 3 */}
+              <motion.div whileHover={{ y: -6 }} className={`border rounded-3xl p-8 space-y-4 relative ${bgCard}`}>
+                <div className="w-10 h-10 rounded-xl bg-pink-600 text-white font-bold flex items-center justify-center text-sm shadow-md">
+                  03
+                </div>
+                <h3 className={`text-lg font-bold ${textHeading}`}>Export Master ZIP Package</h3>
+                <p className={`text-xs leading-relaxed ${textSub}`}>
+                  Click once to assemble the complete 11-directory master zip with print CMYK, digital RGB, and raster PNG resolutions.
+                </p>
+              </motion.div>
+            </div>
+          </section>
+
           {/* Pricing & Plans Section */}
           <section id="pricing" className={`max-w-7xl mx-auto px-6 py-24 border-t ${borderSec}`}>
             <div className="text-center space-y-4 mb-16">
@@ -658,6 +729,37 @@ export default function Home() {
                   Contact Sales
                 </motion.button>
               </motion.div>
+            </div>
+          </section>
+
+          {/* FAQ SECTION */}
+          <section id="faq" className={`max-w-4xl mx-auto px-6 py-24 border-t ${borderSec} space-y-12 w-full`}>
+            <div className="text-center space-y-4">
+              <span className="text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Got Questions?</span>
+              <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Frequently Asked Questions</h2>
+              <p className={`text-sm sm:text-base ${textSub}`}>Everything you need to know about AlliesOS asset packaging.</p>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaqIndex === index;
+                return (
+                  <div key={index} className={`border rounded-2xl overflow-hidden transition-all ${bgCard}`}>
+                    <button
+                      onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                      className="w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-sm"
+                    >
+                      <span className={textHeading}>{faq.question}</span>
+                      <ChevronDown className={`w-4 h-4 text-indigo-500 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    {isOpen && (
+                      <div className={`px-6 pb-6 text-xs leading-relaxed border-t pt-4 ${borderSec} ${textSub}`}>
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </section>
 

@@ -29,7 +29,6 @@ export default function AgencyPortfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<"all" | "brand" | "motion" | "web">("all");
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [logoError, setLogoError] = useState(false);
 
   // Interactive Project Cost Estimator State
   const [projectType, setProjectType] = useState<"brand" | "motion" | "web" | "full">("brand");
@@ -170,33 +169,65 @@ export default function AgencyPortfolio() {
   const borderSec = isDark ? "border-slate-800" : "border-slate-200";
 
   return (
-    <div className={`min-h-screen font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300 overflow-x-hidden ${bgMain}`}>
+    <div className={`min-h-screen font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300 overflow-x-hidden relative ${bgMain}`}>
       
+      {/* BALANCED ANIMATED BACKGROUND PATTERN (Non-interactive layer) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Subtle Moving Grid Lines */}
+        <div className={`absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_right,#2563eb_1px,transparent_1px),linear-gradient(to_bottom,#2563eb_1px,transparent_1px)] bg-[size:4rem_4rem]`}></div>
+
+        {/* Floating Animated Orb 1 */}
+        <motion.div 
+          animate={{
+            x: [0, 60, -40, 0],
+            y: [0, -80, 50, 0],
+            scale: [1, 1.2, 0.9, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[140px]"
+        />
+
+        {/* Floating Animated Orb 2 */}
+        <motion.div 
+          animate={{
+            x: [0, -70, 50, 0],
+            y: [0, 90, -60, 0],
+            scale: [1, 0.85, 1.1, 1],
+          }}
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-orange-600/10 rounded-full blur-[150px]"
+        />
+      </div>
+
       {/* HEADER / NAVIGATION */}
       <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${bgHeader}`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
-          {/* Brand Logo with Fallback */}
+          {/* Scaled & Prominent Brand Logo Emblem */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            {!logoError ? (
-              <img 
-                src="/logo.png" 
-                alt="Allies Investors Tanzania Logo" 
-                onError={() => setLogoError(true)}
-                className="w-10 h-10 object-contain rounded-full border border-blue-500/30 p-0.5"
-              />
-            ) : (
-              <div className="w-10 h-10 rounded-full bg-blue-600 p-0.5 shadow-lg shadow-blue-600/30 flex items-center justify-center border-2 border-white/20">
-                <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
-                  <span className="font-extrabold text-blue-500 text-sm tracking-tighter">A</span>
-                </div>
+            <div className="w-14 h-14 rounded-full bg-blue-600 p-0.5 shadow-xl shadow-blue-600/30 flex items-center justify-center shrink-0 border-2 border-white/20 hover:scale-105 transition-transform">
+              <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center overflow-hidden">
+                <svg className="w-9 h-9 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="46" stroke="#2563EB" strokeWidth="6" />
+                  <path d="M50 20 L25 75 L40 75 L50 50 L60 75 L75 75 Z" fill="#2563EB" />
+                  <path d="M50 35 L40 60 L60 60 Z" fill="#FFFFFF" />
+                  <circle cx="50" cy="50" r="4" fill="#0B0F17" />
+                </svg>
               </div>
-            )}
-            <div>
-              <span className={`font-extrabold text-base tracking-tight block leading-tight ${textHeading}`}>
+            </div>
+            <div className="flex flex-col justify-center">
+              <span className={`font-black text-lg tracking-tight leading-none ${textHeading}`}>
                 Allies Investors
               </span>
-              <span className="text-[10px] text-blue-500 font-bold tracking-widest uppercase block">
+              <span className="text-[11px] text-blue-500 font-extrabold tracking-widest uppercase mt-1">
                 Shaping Digital Future
               </span>
             </div>
@@ -215,7 +246,7 @@ export default function AgencyPortfolio() {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className={`p-2 rounded-xl border transition-all ${
+              className={`p-2.5 rounded-xl border transition-all ${
                 isDark 
                   ? "bg-slate-900 border-slate-800 text-amber-400 hover:bg-slate-800" 
                   : "bg-slate-100 border-slate-200 text-blue-600 hover:bg-slate-200"
@@ -258,7 +289,7 @@ export default function AgencyPortfolio() {
           <motion.div 
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`md:hidden border-b px-6 py-6 space-y-4 text-sm font-semibold ${bgCard}`}
+            className={`md:hidden border-b px-6 py-6 space-y-4 text-sm font-semibold relative z-50 ${bgCard}`}
           >
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className={`block ${textSub} hover:text-blue-500`}>Services</a>
             <a href="#portfolio" onClick={() => setMobileMenuOpen(false)} className={`block ${textSub} hover:text-blue-500`}>Portfolio</a>
@@ -271,10 +302,7 @@ export default function AgencyPortfolio() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative pt-36 pb-24 px-6 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[130px] pointer-events-none"></div>
-        <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-orange-600/15 rounded-full blur-[110px] pointer-events-none"></div>
-
+      <section className="relative pt-36 pb-24 px-6 overflow-hidden z-10">
         <div className="max-w-7xl mx-auto text-center space-y-8 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
@@ -352,7 +380,7 @@ export default function AgencyPortfolio() {
       </section>
 
       {/* SERVICES SECTION */}
-      <section id="services" className={`py-24 px-6 border-t ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
+      <section id="services" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
@@ -381,7 +409,7 @@ export default function AgencyPortfolio() {
       </section>
 
       {/* PORTFOLIO / PROJECTS SECTION */}
-      <section id="portfolio" className={`py-24 px-6 border-t ${borderSec}`}>
+      <section id="portfolio" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-4 max-w-2xl">
@@ -453,7 +481,7 @@ export default function AgencyPortfolio() {
       </section>
 
       {/* INTERACTIVE PROJECT COST ESTIMATOR */}
-      <section id="estimator" className={`py-24 px-6 border-t ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
+      <section id="estimator" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <span className="text-xs font-semibold text-orange-500 uppercase tracking-widest bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/20">
@@ -534,7 +562,7 @@ export default function AgencyPortfolio() {
       </section>
 
       {/* ABOUT US / WHY CHOOSE US */}
-      <section id="about" className={`py-24 px-6 border-t ${borderSec}`}>
+      <section id="about" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
@@ -589,7 +617,7 @@ export default function AgencyPortfolio() {
       </section>
 
       {/* FAQ SECTION */}
-      <section id="faq" className={`py-24 px-6 border-t ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
+      <section id="faq" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
@@ -624,7 +652,7 @@ export default function AgencyPortfolio() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className={`py-24 px-6 border-t ${borderSec}`}>
+      <section id="contact" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-6">
             <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
@@ -758,7 +786,7 @@ export default function AgencyPortfolio() {
       </section>
 
       {/* FOOTER */}
-      <footer className={`border-t py-12 px-6 ${borderSec} ${isDark ? "bg-[#0B0F17]" : "bg-slate-200/60"}`}>
+      <footer className={`border-t py-12 px-6 relative z-10 ${borderSec} ${isDark ? "bg-[#0B0F17]" : "bg-slate-200/60"}`}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="space-y-1">
             <div className={`font-bold ${textHeading}`}>Allies Investors Tanzania</div>

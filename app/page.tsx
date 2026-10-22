@@ -29,6 +29,7 @@ export default function AgencyPortfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<"all" | "brand" | "motion" | "web">("all");
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [logoError, setLogoError] = useState(false);
 
   // Interactive Project Cost Estimator State
   const [projectType, setProjectType] = useState<"brand" | "motion" | "web" | "full">("brand");
@@ -175,23 +176,27 @@ export default function AgencyPortfolio() {
       <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${bgHeader}`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
-          {/* Scaled & Prominent Brand Logo Emblem */}
+          {/* Brand Logo with Fallback */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-14 h-14 rounded-full bg-blue-600 p-0.5 shadow-xl shadow-blue-600/30 flex items-center justify-center shrink-0 border-2 border-white/20 hover:scale-105 transition-transform">
-              <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center overflow-hidden">
-                <svg className="w-9 h-9 text-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="50" r="46" stroke="#2563EB" strokeWidth="6" />
-                  <path d="M50 20 L25 75 L40 75 L50 50 L60 75 L75 75 Z" fill="#2563EB" />
-                  <path d="M50 35 L40 60 L60 60 Z" fill="#FFFFFF" />
-                  <circle cx="50" cy="50" r="4" fill="#0B0F17" />
-                </svg>
+            {!logoError ? (
+              <img 
+                src="/logo.png" 
+                alt="Allies Investors Tanzania Logo" 
+                onError={() => setLogoError(true)}
+                className="w-10 h-10 object-contain rounded-full border border-blue-500/30 p-0.5"
+              />
+            ) : (
+              <div className="w-10 h-10 rounded-full bg-blue-600 p-0.5 shadow-lg shadow-blue-600/30 flex items-center justify-center border-2 border-white/20">
+                <div className="w-full h-full bg-[#0B0F17] rounded-full flex items-center justify-center">
+                  <span className="font-extrabold text-blue-500 text-sm tracking-tighter">A</span>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col justify-center">
-              <span className={`font-black text-lg tracking-tight leading-none ${textHeading}`}>
+            )}
+            <div>
+              <span className={`font-extrabold text-base tracking-tight block leading-tight ${textHeading}`}>
                 Allies Investors
               </span>
-              <span className="text-[11px] text-blue-500 font-extrabold tracking-widest uppercase mt-1">
+              <span className="text-[10px] text-blue-500 font-bold tracking-widest uppercase block">
                 Shaping Digital Future
               </span>
             </div>
@@ -210,7 +215,7 @@ export default function AgencyPortfolio() {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={toggleTheme}
-              className={`p-2.5 rounded-xl border transition-all ${
+              className={`p-2 rounded-xl border transition-all ${
                 isDark 
                   ? "bg-slate-900 border-slate-800 text-amber-400 hover:bg-slate-800" 
                   : "bg-slate-100 border-slate-200 text-blue-600 hover:bg-slate-200"

@@ -581,12 +581,14 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Features Grid */}
+          {/* FEATURES GRID SECTION */}
           <section id="features" className="max-w-7xl mx-auto px-6 py-24 space-y-16">
-            <div className="text-center space-y-4 max-w-3xl mx-auto">
-              <span className="text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Engineered For Professionals</span>
+            <div className="text-center space-y-6 max-w-3xl mx-auto">
+              <span className="inline-block text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20 mb-3">
+                Engineered For Professionals
+              </span>
               <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Everything You Need for Elite Client Deliveries</h2>
-              <p className={`text-sm sm:text-base ${textSub}`}>Designed specifically for freelance brand designers, motion studios, and agencies who demand precision.</p>
+              <p className={`text-sm sm:text-base leading-relaxed ${textSub}`}>Designed specifically for freelance brand designers, motion studios, and agencies who demand precision.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -624,10 +626,12 @@ export default function Home() {
 
           {/* HOW IT WORKS SECTION */}
           <section id="how-it-works" className={`max-w-7xl mx-auto px-6 py-24 border-t ${borderSec} space-y-16`}>
-            <div className="text-center space-y-4 max-w-3xl mx-auto">
-              <span className="text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">3-Step Automation</span>
+            <div className="text-center space-y-6 max-w-3xl mx-auto">
+              <span className="inline-block text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20 mb-3">
+                3-Step Automation
+              </span>
               <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>How AlliesOS Works</h2>
-              <p className={`text-sm sm:text-base ${textSub}`}>From raw SVG artwork to a complete studio-grade client handoff pack in three simple steps.</p>
+              <p className={`text-sm sm:text-base leading-relaxed ${textSub}`}>From raw SVG artwork to a complete studio-grade client handoff pack in three simple steps.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -666,12 +670,14 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Pricing & Plans Section */}
+          {/* PRICING & PLANS SECTION */}
           <section id="pricing" className={`max-w-7xl mx-auto px-6 py-24 border-t ${borderSec}`}>
-            <div className="text-center space-y-4 mb-16">
-              <span className="text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Flexible Pricing</span>
+            <div className="text-center space-y-6 mb-16 max-w-3xl mx-auto">
+              <span className="inline-block text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20 mb-3">
+                Flexible Pricing
+              </span>
               <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Simple, Transparent Plans</h2>
-              <p className={`text-base ${textSub}`}>Choose the plan that fits your freelance design workflow or motion agency.</p>
+              <p className={`text-base leading-relaxed ${textSub}`}>Choose the plan that fits your freelance design workflow or motion agency.</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
@@ -733,11 +739,13 @@ export default function Home() {
           </section>
 
           {/* FAQ SECTION */}
-          <section id="faq" className={`max-w-4xl mx-auto px-6 py-24 border-t ${borderSec} space-y-12 w-full`}>
-            <div className="text-center space-y-4">
-              <span className="text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Got Questions?</span>
+          <section id="faq" className={`max-w-4xl mx-auto px-6 py-24 border-t ${borderSec} space-y-16 w-full`}>
+            <div className="text-center space-y-6 max-w-3xl mx-auto">
+              <span className="inline-block text-xs font-semibold text-indigo-500 uppercase tracking-widest bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20 mb-3">
+                Got Questions?
+              </span>
               <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Frequently Asked Questions</h2>
-              <p className={`text-sm sm:text-base ${textSub}`}>Everything you need to know about AlliesOS asset packaging.</p>
+              <p className={`text-sm sm:text-base leading-relaxed ${textSub}`}>Everything you need to know about AlliesOS asset packaging.</p>
             </div>
 
             <div className="space-y-4">

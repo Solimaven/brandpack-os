@@ -171,10 +171,10 @@ export default function AgencyPortfolio() {
   return (
     <div className={`min-h-screen font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300 overflow-x-hidden relative ${bgMain}`}>
       
-      {/* SUBTLE BALANCED BACKGROUND (Non-interactive layer) */}
+      {/* ELEGANT DOT MATRIX BACKGROUND PATTERN (Non-interactive layer) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {/* Very faint, soft grid lines */}
-        <div className={`absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#2563eb_1px,transparent_1px),linear-gradient(to_bottom,#2563eb_1px,transparent_1px)] bg-[size:4rem_4rem]`}></div>
+        {/* Subtle Dot Matrix */}
+        <div className={`absolute inset-0 opacity-[0.2] bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:24px_24px]`}></div>
 
         {/* Soft Floating Orb 1 */}
         <motion.div 

@@ -208,16 +208,16 @@ export default function AgencyPortfolio() {
       <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${bgHeader}`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
-          {/* Using your actual /logo.png file from the public folder */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          {/* Logo without stroke, scaled up to fit header height */}
+          <div className="flex items-center space-x-4 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img 
               src="/logo.png" 
               alt="Allies Investors Tanzania Logo" 
-              className="w-12 h-12 rounded-full object-cover border-2 border-blue-500/40 shadow-lg shadow-blue-600/20 shrink-0 hover:scale-105 transition-transform" 
+              className="w-16 h-16 object-contain shrink-0 hover:scale-105 transition-transform" 
             />
             
             <div className="flex flex-col justify-center">
-              <span className={`font-black text-sm sm:text-base tracking-tight leading-none ${textHeading}`}>
+              <span className={`font-black text-base sm:text-lg tracking-tight leading-none ${textHeading}`}>
                 Allies Investors Tanzania
               </span>
               <span className="text-[10px] sm:text-[11px] text-blue-500 font-extrabold tracking-widest uppercase mt-1">

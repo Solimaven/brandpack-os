@@ -374,13 +374,14 @@ export default function AgencyPortfolio() {
 
       {/* SERVICES SECTION */}
       <section id="services" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header with Added Bottom Margin */}
+          <div className="text-center space-y-5 max-w-3xl mx-auto mb-16">
             <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
               What We Offer
             </span>
             <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Comprehensive Digital Solutions</h2>
-            <p className={`text-sm sm:text-base ${textSub}`}>We love challenging projects that require thoughtful design, sophisticated development, and market strategy.</p>
+            <p className={`text-sm sm:text-base leading-relaxed ${textSub}`}>We love challenging projects that require thoughtful design, sophisticated development, and market strategy.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -403,14 +404,15 @@ export default function AgencyPortfolio() {
 
       {/* PORTFOLIO / PROJECTS SECTION */}
       <section id="portfolio" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
-        <div className="max-w-7xl mx-auto space-y-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header with Added Bottom Margin */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div className="space-y-4 max-w-2xl">
               <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
                 Our Showcase
               </span>
               <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>A Selection of Our Recent Projects</h2>
-              <p className={`text-sm ${textSub}`}>Explore how we help brands stand out through powerful visual storytelling and robust digital engineering.</p>
+              <p className={`text-sm leading-relaxed ${textSub}`}>Explore how we help brands stand out through powerful visual storytelling and robust digital engineering.</p>
             </div>
 
             {/* Category Filter Tabs */}
@@ -475,13 +477,14 @@ export default function AgencyPortfolio() {
 
       {/* INTERACTIVE PROJECT COST ESTIMATOR */}
       <section id="estimator" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
-        <div className="max-w-4xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header with Added Bottom Margin */}
+          <div className="text-center space-y-5 mb-16">
             <span className="text-xs font-semibold text-orange-500 uppercase tracking-widest bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/20">
               Instant Budget Calculator
             </span>
             <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Estimate Your Project Cost</h2>
-            <p className={`text-sm ${textSub}`}>Select your requirements below to calculate an instant ballpark budget estimate.</p>
+            <p className={`text-sm leading-relaxed ${textSub}`}>Select your requirements below to calculate an instant ballpark budget estimate.</p>
           </div>
 
           <div className={`border rounded-3xl p-8 sm:p-12 shadow-2xl space-y-8 ${bgCard}`}>
@@ -557,14 +560,17 @@ export default function AgencyPortfolio() {
       {/* ABOUT US / WHY CHOOSE US */}
       <section id="about" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
-              Why Choose Allies Investors
-            </span>
-            <h2 className={`text-3xl sm:text-5xl font-extrabold leading-tight ${textHeading}`}>
-              Shaping Digital Future Across Tanzania & Beyond.
-            </h2>
-            <p className={`text-sm leading-relaxed ${textSub}`}>
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
+                Why Choose Allies Investors
+              </span>
+              <h2 className={`text-3xl sm:text-5xl font-extrabold leading-tight ${textHeading}`}>
+                Shaping Digital Future Across Tanzania & Beyond.
+              </h2>
+            </div>
+
+            <p className={`text-sm sm:text-base leading-relaxed ${textSub}`}>
               We treat your business as if it were our own. Founded in Tanzania, Allies Investors brings together absolute experts in brand identity, motion design, and software engineering to deliver exceptional results.
             </p>
 
@@ -575,7 +581,7 @@ export default function AgencyPortfolio() {
                 "Holistic digital approach combining creative & technical strategy",
                 "24/7 partner availability and dedicated support",
               ].map((item, idx) => (
-                <div key={idx} className={`flex items-center space-x-3 text-xs font-semibold ${textHeading}`}>
+                <div key={idx} className={`flex items-center space-x-3 text-xs sm:text-sm font-semibold ${textHeading}`}>
                   <div className="w-5 h-5 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center shrink-0">
                     <Check className="w-3.5 h-3.5" />
                   </div>
@@ -587,15 +593,15 @@ export default function AgencyPortfolio() {
 
           <div className="relative">
             <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-orange-500 rounded-3xl blur-xl opacity-20"></div>
-            <div className={`relative border rounded-3xl p-8 space-y-6 shadow-2xl ${bgCard}`}>
+            <div className={`relative border rounded-3xl p-8 sm:p-10 space-y-6 shadow-2xl ${bgCard}`}>
               <div className="space-y-2">
                 <span className="text-[10px] uppercase font-bold text-blue-500 tracking-wider">Our Core Vision</span>
                 <h3 className={`text-xl font-bold ${textHeading}`}>Empowering African Businesses & Global Brands</h3>
               </div>
-              <p className={`text-xs leading-relaxed ${textSub}`}>
+              <p className={`text-xs sm:text-sm leading-relaxed ${textSub}`}>
                 Whether you are launching a startup, scaling an established enterprise, or producing broadcast sports graphics, our team delivers world-class standards without compromise.
               </p>
-              <div className={`pt-4 border-t flex items-center justify-between ${borderSec}`}>
+              <div className={`pt-6 border-t flex items-center justify-between ${borderSec}`}>
                 <div>
                   <div className={`text-sm font-bold ${textHeading}`}>Solima Manyama</div>
                   <div className={`text-xs ${textSub}`}>Founder & Primary Designer</div>
@@ -611,13 +617,14 @@ export default function AgencyPortfolio() {
 
       {/* FAQ SECTION */}
       <section id="faq" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
-        <div className="max-w-4xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header with Added Bottom Margin */}
+          <div className="text-center space-y-5 mb-16">
             <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
               Got Questions?
             </span>
             <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Frequently Asked Questions</h2>
-            <p className={`text-sm ${textSub}`}>Everything you need to know about partnering with Allies Investors Tanzania.</p>
+            <p className={`text-sm leading-relaxed ${textSub}`}>Everything you need to know about partnering with Allies Investors Tanzania.</p>
           </div>
 
           <div className="space-y-4">
@@ -633,7 +640,7 @@ export default function AgencyPortfolio() {
                     <ChevronDown className={`w-4 h-4 text-blue-500 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                   </button>
                   {isOpen && (
-                    <div className={`px-6 pb-6 text-xs leading-relaxed border-t pt-4 ${borderSec} ${textSub}`}>
+                    <div className={`px-6 pb-6 text-xs sm:text-sm leading-relaxed border-t pt-4 ${borderSec} ${textSub}`}>
                       {faq.answer}
                     </div>
                   )}
@@ -647,21 +654,24 @@ export default function AgencyPortfolio() {
       {/* CONTACT SECTION */}
       <section id="contact" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div className="space-y-6">
-            <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
-              Get In Touch
-            </span>
-            <h2 className={`text-3xl sm:text-5xl font-extrabold leading-tight ${textHeading}`}>
-              Let's Build Something Extraordinary Together
-            </h2>
-            <p className={`text-sm leading-relaxed ${textSub}`}>
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
+                Get In Touch
+              </span>
+              <h2 className={`text-3xl sm:text-5xl font-extrabold leading-tight ${textHeading}`}>
+                Let's Build Something Extraordinary Together
+              </h2>
+            </div>
+
+            <p className={`text-sm sm:text-base leading-relaxed ${textSub}`}>
               Ready to elevate your brand, build a high-performance website, or create captivating motion graphics? Contact us today for a free initial consultation.
             </p>
 
-            <div className="space-y-4 pt-4">
-              <div className={`flex items-center space-x-4 text-xs ${textSub}`}>
-                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center text-blue-500 ${bgSubCard}`}>
-                  <Phone className="w-4 h-4" />
+            <div className="space-y-6 pt-2">
+              <div className={`flex items-center space-x-4 text-xs sm:text-sm ${textSub}`}>
+                <div className={`w-11 h-11 rounded-xl border flex items-center justify-center text-blue-500 shrink-0 ${bgSubCard}`}>
+                  <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <div className={`font-bold ${textHeading}`}>Call Us Now</div>
@@ -669,9 +679,9 @@ export default function AgencyPortfolio() {
                 </div>
               </div>
 
-              <div className={`flex items-center space-x-4 text-xs ${textSub}`}>
-                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center text-blue-500 ${bgSubCard}`}>
-                  <Mail className="w-4 h-4" />
+              <div className={`flex items-center space-x-4 text-xs sm:text-sm ${textSub}`}>
+                <div className={`w-11 h-11 rounded-xl border flex items-center justify-center text-blue-500 shrink-0 ${bgSubCard}`}>
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <div className={`font-bold ${textHeading}`}>Send Us An Email</div>
@@ -679,9 +689,9 @@ export default function AgencyPortfolio() {
                 </div>
               </div>
 
-              <div className={`flex items-center space-x-4 text-xs ${textSub}`}>
-                <div className={`w-10 h-10 rounded-xl border flex items-center justify-center text-blue-500 ${bgSubCard}`}>
-                  <MapPin className="w-4 h-4" />
+              <div className={`flex items-center space-x-4 text-xs sm:text-sm ${textSub}`}>
+                <div className={`w-11 h-11 rounded-xl border flex items-center justify-center text-blue-500 shrink-0 ${bgSubCard}`}>
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <div className={`font-bold ${textHeading}`}>Location</div>

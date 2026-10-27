@@ -171,7 +171,7 @@ export default function AgencyPortfolio() {
   return (
     <div className={`min-h-screen font-sans selection:bg-blue-600 selection:text-white transition-colors duration-300 overflow-x-hidden relative ${bgMain}`}>
       
-      {/* ELEGANT DOT MATRIX BACKGROUND PATTERN (Non-interactive layer) */}
+      {/* ELEGANT DOT MATRIX BACKGROUND PATTERN */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className={`absolute inset-0 opacity-[0.18] bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:24px_24px]`}></div>
 
@@ -208,36 +208,16 @@ export default function AgencyPortfolio() {
       <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b ${bgHeader}`}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           
-          {/* Official Allies Brand Badge with Pen Nib and Complete Title */}
+          {/* Using your actual /logo.png file from the public folder */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="w-12 h-12 rounded-full p-0.5 shadow-xl shadow-blue-600/20 flex items-center justify-center shrink-0 hover:scale-105 transition-transform">
-              <svg className="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Outer Blue Ring */}
-                <circle cx="100" cy="100" r="96" fill="#2563EB" stroke="#FFFFFF" strokeWidth="3"/>
-                {/* Inner Dark Core */}
-                <circle cx="100" cy="100" r="70" fill="#111827"/>
-                <circle cx="100" cy="100" r="69" stroke="#FFFFFF" strokeWidth="2" strokeDasharray="4 4"/>
-                
-                {/* Stylized 'A' with Pen Nib */}
-                <path d="M100 45 L62 135 H82 L100 90 L118 135 H138 L100 45 Z" fill="#FFFFFF"/>
-                <path d="M100 68 L88 118 H112 L100 68 Z" fill="#111827"/>
-                {/* Pen Nib Dot */}
-                <circle cx="100" cy="98" r="5" fill="#FFFFFF"/>
-                <rect x="98" y="103" width="4" height="15" fill="#FFFFFF"/>
-                
-                {/* Hexagon Tech Nodes */}
-                <circle cx="70" cy="70" r="3" fill="#FFFFFF"/>
-                <circle cx="60" cy="78" r="3" fill="#FFFFFF"/>
-                <circle cx="65" cy="88" r="3" fill="#FFFFFF"/>
-                
-                {/* Stars */}
-                <path d="M32 100 L35 107 L42 107 L36 111 L38 118 L32 113 L26 118 L28 111 L22 107 L29 107 Z" fill="#FFFFFF"/>
-                <path d="M168 100 L171 107 L178 107 L172 111 L174 118 L168 113 L162 118 L164 111 L158 107 L165 107 Z" fill="#FFFFFF"/>
-              </svg>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Allies Investors Tanzania Logo" 
+              className="w-12 h-12 rounded-full object-cover border-2 border-blue-500/40 shadow-lg shadow-blue-600/20 shrink-0 hover:scale-105 transition-transform" 
+            />
             
             <div className="flex flex-col justify-center">
-              <span className={`font-black text-base sm:text-lg tracking-tight leading-none ${textHeading}`}>
+              <span className={`font-black text-sm sm:text-base tracking-tight leading-none ${textHeading}`}>
                 Allies Investors Tanzania
               </span>
               <span className="text-[10px] sm:text-[11px] text-blue-500 font-extrabold tracking-widest uppercase mt-1">

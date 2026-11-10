@@ -375,12 +375,12 @@ export default function AgencyPortfolio() {
       {/* SERVICES SECTION */}
       <section id="services" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
         <div className="max-w-7xl mx-auto">
-          {/* Section Header with Added Bottom Margin */}
-          <div className="text-center space-y-5 max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
+          {/* Section Header with Generous Spacing Below Badge */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="inline-block text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 mb-6">
               What We Offer
             </span>
-            <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Comprehensive Digital Solutions</h2>
+            <h2 className={`text-3xl sm:text-5xl font-extrabold mb-5 ${textHeading}`}>Comprehensive Digital Solutions</h2>
             <p className={`text-sm sm:text-base leading-relaxed ${textSub}`}>We love challenging projects that require thoughtful design, sophisticated development, and market strategy.</p>
           </div>
 
@@ -405,13 +405,13 @@ export default function AgencyPortfolio() {
       {/* PORTFOLIO / PROJECTS SECTION */}
       <section id="portfolio" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
         <div className="max-w-7xl mx-auto">
-          {/* Section Header with Added Bottom Margin */}
+          {/* Section Header with Generous Spacing Below Badge */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <div className="space-y-4 max-w-2xl">
-              <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
+            <div className="max-w-2xl">
+              <span className="inline-block text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 mb-6">
                 Our Showcase
               </span>
-              <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>A Selection of Our Recent Projects</h2>
+              <h2 className={`text-3xl sm:text-5xl font-extrabold mb-5 ${textHeading}`}>A Selection of Our Recent Projects</h2>
               <p className={`text-sm leading-relaxed ${textSub}`}>Explore how we help brands stand out through powerful visual storytelling and robust digital engineering.</p>
             </div>
 
@@ -478,12 +478,12 @@ export default function AgencyPortfolio() {
       {/* INTERACTIVE PROJECT COST ESTIMATOR */}
       <section id="estimator" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
         <div className="max-w-4xl mx-auto">
-          {/* Section Header with Added Bottom Margin */}
-          <div className="text-center space-y-5 mb-16">
-            <span className="text-xs font-semibold text-orange-500 uppercase tracking-widest bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/20">
+          {/* Section Header with Generous Spacing Below Badge */}
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold text-orange-500 uppercase tracking-widest bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/20 mb-6">
               Instant Budget Calculator
             </span>
-            <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Estimate Your Project Cost</h2>
+            <h2 className={`text-3xl sm:text-5xl font-extrabold mb-5 ${textHeading}`}>Estimate Your Project Cost</h2>
             <p className={`text-sm leading-relaxed ${textSub}`}>Select your requirements below to calculate an instant ballpark budget estimate.</p>
           </div>
 
@@ -561,8 +561,8 @@ export default function AgencyPortfolio() {
       <section id="about" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <div className="space-y-4">
-              <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
+            <div>
+              <span className="inline-block text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 mb-6">
                 Why Choose Allies Investors
               </span>
               <h2 className={`text-3xl sm:text-5xl font-extrabold leading-tight ${textHeading}`}>
@@ -618,12 +618,12 @@ export default function AgencyPortfolio() {
       {/* FAQ SECTION */}
       <section id="faq" className={`py-24 px-6 border-t relative z-10 ${borderSec} ${isDark ? "bg-slate-950/50" : "bg-slate-100/50"}`}>
         <div className="max-w-4xl mx-auto">
-          {/* Section Header with Added Bottom Margin */}
-          <div className="text-center space-y-5 mb-16">
-            <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
+          {/* Section Header with Generous Spacing Below Badge */}
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 mb-6">
               Got Questions?
             </span>
-            <h2 className={`text-3xl sm:text-5xl font-extrabold ${textHeading}`}>Frequently Asked Questions</h2>
+            <h2 className={`text-3xl sm:text-5xl font-extrabold mb-5 ${textHeading}`}>Frequently Asked Questions</h2>
             <p className={`text-sm leading-relaxed ${textSub}`}>Everything you need to know about partnering with Allies Investors Tanzania.</p>
           </div>
 
@@ -655,8 +655,8 @@ export default function AgencyPortfolio() {
       <section id="contact" className={`py-24 px-6 border-t relative z-10 ${borderSec}`}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-8">
-            <div className="space-y-4">
-              <span className="text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20">
+            <div>
+              <span className="inline-block text-xs font-semibold text-blue-500 uppercase tracking-widest bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/20 mb-6">
                 Get In Touch
               </span>
               <h2 className={`text-3xl sm:text-5xl font-extrabold leading-tight ${textHeading}`}>
